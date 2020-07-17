@@ -9,25 +9,29 @@ class GroupTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onTap: (){
-        Navigator.of(context).pushNamed("/chat",arguments: group);
-      },
-      leading: Container(
-        width: 45,
-        decoration: BoxDecoration(
-          color: Colors.teal[100],
-          shape: BoxShape.circle,
+    return Material(
+      elevation: 1,
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+      color: Colors.tealAccent,
+      child: ListTile(
+        onTap: (){
+          Navigator.of(context).pushNamed("/chat",arguments: group);
+        },
+        leading: Container(
+          width: 45,
+          decoration: BoxDecoration(
+            color: Colors.teal[100],
+            shape: BoxShape.circle,
+          ),
+        ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(group.name),
+            Text("16/7/2020",style: TextStyle(color: Colors.grey[500],fontSize: 12),),
+          ],
         ),
       ),
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(group.name),
-          Text("16/7/2020",style: TextStyle(color: Colors.grey[500],fontSize: 12),),
-        ],
-      ),
-      subtitle: Text(group.id),
     );
   }
 }

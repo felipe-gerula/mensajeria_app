@@ -21,7 +21,14 @@ class GroupListPage extends StatelessWidget {
             if(!snapshot.hasData){
               return Loading();
             }
-            return GroupList(groups : snapshot.data);
+            return Stack(
+              children: <Widget>[LayoutBuilder(builder:(context,BoxConstraints contraints){
+                return Image.asset("assets/arena-background.jpg");
+              },
+              ),
+                GroupList(groups : snapshot.data),
+              ],
+            );
            }
           ),
     );
