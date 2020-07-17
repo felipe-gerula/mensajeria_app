@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mensajeria_app/database.dart' as db;
 import 'package:mensajeria_app/model/group.dart';
@@ -13,6 +14,7 @@ class ChatPage extends StatelessWidget {
     final Group group = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black87),
         title: Text(group.name),
       ),
       backgroundColor: Colors.teal[100],
